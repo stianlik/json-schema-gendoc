@@ -1,0 +1,3 @@
+const SyntaxType = {
+    JSON: 'json'
+};

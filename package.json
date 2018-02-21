@@ -1,0 +1,29 @@
+{
+  "name": "json-schema-gendoc",
+  "version": "0.0.1",
+  "description": "JSON Schema documentation generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "json-schema-gendoc": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/stianlik/json-schema-gendoc.git"
+  },
+  "keywords": [
+    "json-schema",
+    "json",
+    "schema",
+    "documentation",
+    "generator"
+  ],
+  "author": "Stian Liknes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stianlik/json-schema-gendoc/issues"
+  },
+  "homepage": "https://github.com/stianlik/json-schema-gendoc#readme"
+}
