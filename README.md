@@ -29,6 +29,7 @@ preferred language, and `schemaFile` to define which file you'd like to generate
 ```
 {
     "schemaFile": null,
+    "title": null,
     "outputFormat": 'markdown',
     "rendererPath": './src/renderer',
     "translations": {

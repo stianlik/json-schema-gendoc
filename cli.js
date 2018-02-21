@@ -13,6 +13,7 @@ let config = {
     outputFormat: 'markdown',
     rendererPath: './src/renderer',
     schemaFile: null,
+    title: null,
     translations: {
         'examples': 'Examples',
         'properties': 'Properties',
@@ -57,6 +58,6 @@ process.stdout.write(
         new Messages(config.translations)
     ).transform(
         JSON.parse(fs.readFileSync(config.schemaFile, 'utf8')),
-        'Aggregation'
+        config.title === null ? path.basename(config.schemaFile, '.json') : config.title
     )
 );

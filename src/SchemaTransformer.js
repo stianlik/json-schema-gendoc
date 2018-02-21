@@ -9,7 +9,12 @@ class SchemaTransformer {
 
     transform(schema, propertyName, level = 0) {
         if (propertyName !== null) {
-            this.renderer.propertyHeading(propertyName, schema[SchemaType.TYPE], schema[SchemaType.FORMAT], level);
+            this.renderer.propertyHeading(
+                propertyName,
+                schema.hasOwnProperty(SchemaType.TYPE) ? Array.isArray(schema[SchemaType.TYPE]) ? schema[SchemaType.TYPE] : [ schema[SchemaType.TYPE] ] : [],
+                schema[SchemaType.FORMAT],
+                level
+            );
             if (schema.hasOwnProperty(SchemaType.TITLE)) {
                 this.renderer.summary(schema.title);
             }

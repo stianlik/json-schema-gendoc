@@ -3,10 +3,10 @@ class MarkdownRenderer {
         this.markdown = '';
     }
 
-    propertyHeading(propertyName, propertyType, propertyFormat, level = 0) {
+    propertyHeading(propertyName, propertyTypes, propertyFormat, level = 0) {
         let heading = propertyName;
-        if (propertyType) {
-            heading += ' `' + propertyType + '`'
+        if (propertyTypes.length) {
+            heading += ' (' + propertyTypes.map(propertyType => '`' + propertyType + '`').join(' | ') + ')'
         }
         if (propertyFormat) {
             heading += ' (`' + propertyFormat + '`)'
