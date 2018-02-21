@@ -6,6 +6,7 @@ module.exports =  {
     ALL_OF: 'allOf',
     ENUM: 'enum',
     EXAMPLES: 'examples',
+    DEFAULT: 'default',
     PROPERTIES: 'properties',
     DEFINITIONS: 'definitions',
     REF: '$ref',

@@ -1,0 +1,75 @@
+{
+    "description": "You can use the configuration file `.json-schema-gendoc.json` to set project-specific default values for the generator.",
+    "properties": {
+        "schemaFile": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "description": "Schema file to process if the command is executed with no arguments.",
+            "examples": [
+                "book.schema.json",
+                "person.schema.json"
+            ],
+            "default": null
+        },
+        "title": {
+            "type": "string",
+            "description": "Override the document title. If this is unspecified, the filename (except `.json` is used).",
+            "examples": [
+                "Book",
+                "Person"
+            ]
+        },
+        "outputFormat": {
+            "type": "string",
+            "description": "Document type to generate. Currently we only support Markdown.",
+            "enum": [
+                "markdown"
+            ],
+            "examples": [
+                "markdown"
+            ],
+            "default": "markdown"
+        },
+        "language": {
+            "type": "string",
+            "description": "Language or messages used in document",
+            "default": "en",
+            "enum": [
+                "en",
+                "no"
+            ],
+            "examples": [
+                "en",
+                "no"
+            ]
+        },
+        "translations": {
+            "type": "object",
+            "description": "Translate messages used in the document by specifying a mapping.",
+            "properties": {
+                "examples": {
+                    "type": "string",
+                    "title": "Examples heading",
+                    "default": "Examples"
+                },
+                "properties": {
+                    "type": "string",
+                    "title": "Properties heading",
+                    "default": "Properties"
+                },
+                "enum": {
+                    "type": "string",
+                    "title": "Enum heading",
+                    "default": "Possible values"
+                },
+                "default": {
+                    "type": "string",
+                    "title": "Default value heading",
+                    "default": "Default value"
+                }
+            }
+        }
+    }
+}

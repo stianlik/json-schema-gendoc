@@ -1,3 +1,3 @@
-const SyntaxType = {
+module.exports = {
     JSON: 'json'
 };

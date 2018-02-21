@@ -24,8 +24,8 @@ class MarkdownRenderer {
         return this;
     }
 
-    codeBlock(example, type) {
-        this.markdown += '```' + type + '\n' + JSON.stringify(example, null, 4) + '\n```\n';
+    codeBlock(example, type = 'json') {
+        this.markdown += '```' + type + '\n' + JSON.stringify(example, null, 4) + '\n```\n\n';
         return this;
     }
 
@@ -48,12 +48,10 @@ class MarkdownRenderer {
         if (examples.length === 0) {
             return;
         }
-        this.codeBlock(examples[0], type);
-        for (let i = 1; i < examples.length; ++i) {
-            this.markdown += '\n';
+        for (let i = 0; i < examples.length; ++i) {
             this.codeBlock(examples[i], type);
         }
-        this.markdown += '\n';
+        this.markdown += '';
     }
 
     inlineExampleList(examples) {

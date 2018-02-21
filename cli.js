@@ -14,14 +14,14 @@ let config = {
     rendererPath: './src/renderer',
     schemaFile: null,
     title: null,
-    translations: {
-        'examples': 'Examples',
-        'properties': 'Properties',
-        'enum': 'Possible values'
-    }
+    language: 'en',
+    translations: null
 };
 if (fs.existsSync(CONFIG_FILE)) {
     config = Object.assign(config, JSON.parse(fs.readFileSync(CONFIG_FILE, 'utf8')))
+}
+if (config.translations === null) {
+    config.translations = Object.assign(config, JSON.parse(fs.readFileSync(__dirname + '/translations/' + config.language + '.json')))
 }
 
 // Command line arguments

@@ -34,6 +34,11 @@ class SchemaTransformer {
             `${this.renderer.paragraph(this.messages.translate(SchemaType.ENUM) + ':')}${this.renderer.enumList(schema.enum)}`;
         }
 
+        if (schema.hasOwnProperty(SchemaType.DEFAULT)) {
+            this.renderer.heading(this.messages.translate(SchemaType.DEFAULT), level + 1);
+            this.renderer.codeBlock(schema[SchemaType.DEFAULT], SyntaxType.JSON);
+        }
+
         if (schema.hasOwnProperty(SchemaType.EXAMPLES)) {
             this.renderer.heading(this.messages.translate(SchemaType.EXAMPLES), level + 1);
             if (SchemaTransformer.shouldRenderInlineExample(schema)) {

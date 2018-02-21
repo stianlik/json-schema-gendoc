@@ -6,6 +6,10 @@ an existing JavaScript-project.
 
 Currently, only a small part of the standard is supported.
 
+## Preview
+
+[Configuration.md](Configuration.md) is generated from `config.schema.json` in this repository.
+
 ## Installation
 
 ```
@@ -24,18 +28,22 @@ json-schema-gendoc /path/to/json-schema-file.json
 
 json-schema-gendoc can be configured using by creating a file named `.json-schema-gendoc.json` in the current working directory. The
 default configuration is included below. All properties are optional. Use `translations` to translate standard messages into your
-preferred language, and `schemaFile` to define which file you'd like to generate documentation from.
+preferred language if it does not exist in the translations folder (or, even better, create a translation file and send me a PR),
+and `schemaFile` to define which file you'd like to generate documentation from.
 
-```
+See [Configuration.md](Configuration.md) for details.
+
+```json
 {
     "schemaFile": null,
     "title": null,
     "outputFormat": 'markdown',
-    "rendererPath": './src/renderer',
+    "language": "no",
     "translations": {
         "examples": "Examples",
         'properties": "Properties",
-        "enum": "Possible values"
+        "enum": "Possible values",
+        "default": "Default value"
     }
 }
 ```
