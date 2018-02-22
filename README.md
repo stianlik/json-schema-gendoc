@@ -37,11 +37,11 @@ See [Configuration.md](Configuration.md) for details.
 {
     "schemaFile": null,
     "title": null,
-    "outputFormat": 'markdown',
+    "outputFormat": "markdown",
     "language": "no",
     "translations": {
         "examples": "Examples",
-        'properties": "Properties",
+        "properties": "Properties",
         "enum": "Possible values",
         "default": "Default value"
     }
