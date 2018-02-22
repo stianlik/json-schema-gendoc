@@ -7,10 +7,10 @@ class SchemaTransformer {
         this.renderer = renderer;
     }
 
-    transform(schema, propertyName, level = 0) {
+    transform(schema, propertyName, level = 0, isRequired = false) {
         if (propertyName !== null) {
             this.renderer.propertyHeading(
-                propertyName,
+                propertyName + (isRequired ? ' _required_' : ''),
                 schema.hasOwnProperty(SchemaType.TYPE) ? Array.isArray(schema[SchemaType.TYPE]) ? schema[SchemaType.TYPE] : [ schema[SchemaType.TYPE] ] : [],
                 schema[SchemaType.FORMAT],
                 level
@@ -19,6 +19,8 @@ class SchemaTransformer {
                 this.renderer.summary(schema.title);
             }
         }
+
+        const requiredProperties = schema.hasOwnProperty(SchemaType.REQUIRED) ? schema[SchemaType.REQUIRED] : [];
 
         if (schema.hasOwnProperty(SchemaType.DESCRIPTION)) {
             this.renderer.paragraph(schema.description);
@@ -51,7 +53,7 @@ class SchemaTransformer {
         if (schema.hasOwnProperty(SchemaType.PROPERTIES)) {
             this.renderer.heading(this.messages.translate(SchemaType.PROPERTIES), level + 1);
             for (let key in schema.properties) {
-                this.transform(schema.properties[key], key, level + 2);
+                this.transform(schema.properties[key], key, level + 2, requiredProperties.includes(key));
             }
         }
 

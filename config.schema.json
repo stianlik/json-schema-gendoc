@@ -69,7 +69,16 @@
                     "title": "Default value heading",
                     "default": "Default value"
                 }
-            }
+            },
+            "examples": [
+                {
+                    "examples": "Look, we have examples!",
+                    "properties": "Available properties",
+                    "enum": "Possible values",
+                    "default": "Default value"
+                }
+            ],
+            "required": [ "examples", "properties", "enum", "default" ]
         }
     }
 }

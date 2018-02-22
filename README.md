@@ -38,7 +38,7 @@ See [Configuration.md](Configuration.md) for details.
     "schemaFile": null,
     "title": null,
     "outputFormat": "markdown",
-    "language": "no",
+    "language": "en",
     "translations": {
         "examples": "Examples",
         "properties": "Properties",

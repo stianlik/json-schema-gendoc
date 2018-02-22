@@ -10,4 +10,5 @@ module.exports =  {
     PROPERTIES: 'properties',
     DEFINITIONS: 'definitions',
     REF: '$ref',
+    REQUIRED: 'required'
 };

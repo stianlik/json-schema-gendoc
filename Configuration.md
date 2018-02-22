@@ -87,9 +87,20 @@ Possible values:
 
 Translate messages used in the document by specifying a mapping.
 
+#### Examples
+
+```json
+{
+    "examples": "Look, we have examples!",
+    "properties": "Available properties",
+    "enum": "Possible values",
+    "default": "Default value"
+}
+```
+
 #### Properties
 
-##### examples (`string`)
+##### examples _required_ (`string`)
 
 Examples heading
 
@@ -99,7 +110,7 @@ Examples heading
 "Examples"
 ```
 
-##### properties (`string`)
+##### properties _required_ (`string`)
 
 Properties heading
 
@@ -109,7 +120,7 @@ Properties heading
 "Properties"
 ```
 
-##### enum (`string`)
+##### enum _required_ (`string`)
 
 Enum heading
 
@@ -119,7 +130,7 @@ Enum heading
 "Possible values"
 ```
 
-##### default (`string`)
+##### default _required_ (`string`)
 
 Default value heading
 
