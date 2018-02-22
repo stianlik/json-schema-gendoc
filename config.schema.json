@@ -68,6 +68,11 @@
                     "type": "string",
                     "title": "Default value heading",
                     "default": "Default value"
+                },
+                "required": {
+                    "type": "string",
+                    "title": "Indicates that a property is required",
+                    "default": "required"
                 }
             },
             "examples": [
@@ -75,10 +80,11 @@
                     "examples": "Look, we have examples!",
                     "properties": "Available properties",
                     "enum": "Possible values",
-                    "default": "Default value"
+                    "default": "Default value",
+                    "required": "cannot omit"
                 }
             ],
-            "required": [ "examples", "properties", "enum", "default" ]
+            "required": [ "examples", "properties", "enum", "default", "required" ]
         }
     }
 }

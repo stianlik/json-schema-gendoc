@@ -94,7 +94,8 @@ Translate messages used in the document by specifying a mapping.
     "examples": "Look, we have examples!",
     "properties": "Available properties",
     "enum": "Possible values",
-    "default": "Default value"
+    "default": "Default value",
+    "required": "cannot omit"
 }
 ```
 
@@ -138,5 +139,15 @@ Default value heading
 
 ```json
 "Default value"
+```
+
+##### required _required_ (`string`)
+
+Indicates that a property is required
+
+###### Default value
+
+```json
+"required"
 ```
 

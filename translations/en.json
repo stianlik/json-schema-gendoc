@@ -2,5 +2,6 @@
    "examples": "Examples",
    "properties": "Properties",
    "enum": "Possible values",
-   "default": "Default value"
+   "default": "Default value",
+   "required": "required"
 }

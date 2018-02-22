@@ -10,7 +10,7 @@ class SchemaTransformer {
     transform(schema, propertyName, level = 0, isRequired = false) {
         if (propertyName !== null) {
             this.renderer.propertyHeading(
-                propertyName + (isRequired ? ' _required_' : ''),
+                propertyName + (isRequired ? ` _${this.messages.translate('required')}_` : ''),
                 schema.hasOwnProperty(SchemaType.TYPE) ? Array.isArray(schema[SchemaType.TYPE]) ? schema[SchemaType.TYPE] : [ schema[SchemaType.TYPE] ] : [],
                 schema[SchemaType.FORMAT],
                 level
