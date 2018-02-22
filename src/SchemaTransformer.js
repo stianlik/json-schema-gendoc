@@ -58,7 +58,7 @@ class SchemaTransformer {
         }
 
         if (schema.hasOwnProperty(SchemaType.REF)) {
-            `[${schema.$ref}](${schema.$ref})\n\n`
+            this.renderer.paragraph(`[${schema.$ref}](${schema.$ref})`)
         }
 
         if (schema.hasOwnProperty(SchemaType.DEFINITIONS)) {
