@@ -1,6 +1,6 @@
 {
   "name": "json-schema-gendoc",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "JSON Schema documentation generator",
   "main": "index.js",
   "scripts": {
