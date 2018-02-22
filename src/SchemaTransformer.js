@@ -50,6 +50,17 @@ class SchemaTransformer {
             }
         }
 
+        if (schema.hasOwnProperty(SchemaType.ITEMS)) {
+            const items = schema[SchemaType.ITEMS];
+            if (Array.isArray(items)) {
+                for (let i = 0; i < items.length; ++i) {
+                    this.transform(items[i], `${propertyName}[${i}]`, level + 1);
+                }
+            } else {
+                this.transform(items, `${propertyName}[]`, level + 1);
+            }
+        }
+
         if (schema.hasOwnProperty(SchemaType.PROPERTIES)) {
             this.renderer.heading(this.messages.translate(SchemaType.PROPERTIES), level + 1);
             for (let key in schema.properties) {
